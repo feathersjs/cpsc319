@@ -65,17 +65,19 @@ The CLI and static code generation can be hard to maintain, is rigid, and does n
 **MVP**: 
 
 - Investigate and determine if, and how an MCP server can be built using **open- source** tools to ingest documents, and provide context to an LLM for working with FeathersJS.  (A functional proof of concept)
+- Integrate MCP server with LLM assisted developer workflow(s)  (i.e Claude code, Cline, etc.)
 
 **Final Project:**
 
-- Improved and tested implementation of the MCP server.
-- Integrated with LLM assisted developer workflow(s)
+- Deployed and tested implementation of the MCP server.
+- Create a public Feathers API containing an evolving database of questions and best practices (A knowledge base).
+- Integrate MCP server with the knowledge base, allowing LLMs to access their content.
+- Through the MCP server allow the LLM to summarise questions and best practices inside a project to be reviewed and submitted to the knowledge base.
 - Blog posts (one per student) explaining how to use this new workflow to integrate feathers with other technologies.  Any technology stack the students are interested in.
 
 ### **Nice to Haves**
 
 Report back a summary of how Claude (or other LLMs) discovered a use case for Feathers, or a new way to use the technology.
-
 - Contributing back to the community of developers
 - Create cleaner code, instead of complex CLI code
 
