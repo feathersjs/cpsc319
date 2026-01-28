@@ -8,9 +8,10 @@ info: |
 transition: slide-left
 title: CPSC 319 kickoff
 background: /images/launch-bridge.svg
+dim: true
 ---
 
-<h1 style="font-size: 4rem; font-weight: 300; color: white;">CPSC 319 Feathers kickoff</h1>
+# CPSC 319 Feathers kickoff
 
 ---
 class: text-center
@@ -181,6 +182,19 @@ class MessageService {
 
 ---
 
+# Real-time
+
+| HTTP method | Service layer method | Real-time event |
+| --- | --- | --- |
+| GET /messages      | messages.find() | - |
+| GET /messages/1    | messages.get(1) | - |
+| POST /messages     | messages.create(data) | `message created` |
+| PUT /messages/1    | messages.update(1, data) | `message updated` |
+| PATCH /messages/1  | messages.patch(1, data) | `message patched` |
+| DELETE /users/1 | messages.remove(1) | `message removed` |
+
+---
+
 # Middleware
 
 Workflows and cross-cutting concerns that can be added to services dynamically
@@ -193,7 +207,9 @@ Workflows and cross-cutting concerns that can be added to services dynamically
 ---
 
 ```ts
-import { sendEmailNotification, checkPermission } from './middleware';
+import {
+  sendEmailNotification, validateData, checkPermission
+} from './middleware';
 
 class MessageService {
   @hooks([
@@ -213,9 +229,43 @@ class MessageService {
 ```
 
 ---
+
+```js
+export async function checkPermission (context, next) {
+  const { user } = context.params
+
+  // e.g. { permissions: [ 'editor', 'admin' ] }
+  if (!user.permissions.includes('editor')) {
+    throw new Error('You are not allowed to do this!')
+  }
+
+  await next()
+}
+```
+
+---
 class: text-center
 ---
 
 <img src="/images/logo-feathers-white.svg" class="mx-a mt-4 mb-12" alt="Feathers logo" />
 
 # The universal web framework
+
+---
+
+<img alt="The truth behind open source" style="height: 100%; margin: 0 auto;" src="images/os-truth.jpg" />
+
+---
+layout: cover
+background: /images/so-questions.jpg
+---
+
+---
+layout: cover
+---
+
+# Questions for you
+
+- How can open source be sustainable in the AI age?
+- What does knowledge sharing look like?
+- How can the benefits be distributed and made accessible to everybody?
