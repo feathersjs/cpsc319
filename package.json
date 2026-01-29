@@ -1,0 +1,24 @@
+{
+  "name": "cpsc319",
+  "version": "1.0.0",
+  "description": "This is the main repository for the University of British Columbia Software Engineering 2026 FeathersJS project.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/feathersjs/cpsc319.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/feathersjs/cpsc319/issues"
+  },
+  "workspaces": [
+    "kickoff"
+  ],
+  "homepage": "https://github.com/feathersjs/cpsc319#readme"
+}
